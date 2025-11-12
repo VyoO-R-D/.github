@@ -1,0 +1,76 @@
+name: Feature
+description: Cross-repo deliverable that can ship independently; links to Stories/Tasks.
+title: "[FEATURE] <concise capability>"
+labels: ["type:feature", "status:todo", "priority:P1"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product / Area
+      description: Which product or domain does this impact?
+      options:
+        - iOS
+        - Backend
+        - Web
+        - API
+        - DevOps
+        - Data
+        - Infrastructure
+        - Security
+        - Mobile SDKs
+        - Internal Tools
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: tshirt
+    attributes:
+      label: Feature Size (T-shirt)
+      description: Relative complexity/coordination level.
+      options: [XS, S, M, L, XL]
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What value this ships; user and business impact.
+      placeholder: Clear, testable outcome
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Conditions that must be true to call this Feature done.
+      placeholder: |
+        - API supports X with 2xx on success
+        - UI flows cover A/B
+    validations:
+      required: true
+  - type: input
+    id: parent_epic
+    attributes:
+      label: Parent Epic
+      description: Link to Epic
+      placeholder: https://github.com/<org>/roadmap/issues/<id>
+  - type: textarea
+    id: links
+    attributes:
+      label: Linked User Stories / Tasks
+      description: Add repo issues and PRs; use checkboxes to drive progress.
+      placeholder: |
+        - [ ] org/ios#123
+        - [ ] org/backend#456
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Definition of Ready (Feature)
+      options:
+        - label: Outcome + ACs defined
+          required: true
+        - label: Dependencies linked
+          required: true
+        - label: Risk assessed (label risk:low/medium/high if needed)
+          required: false
+

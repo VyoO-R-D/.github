@@ -1,0 +1,36 @@
+name: Task
+description: Small, actionable unit of work; link to its parent story/feature.
+title: "[TASK] <what will you do?>"
+labels: ["type:task", "status:todo"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: Concrete change you will make
+    validations:
+      required: true
+  - type: dropdown
+    id: points
+    attributes:
+      label: Points (Fibonacci)
+      options: ["1","2","3","5","8","13"]
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: Parent (Story or Feature)
+      placeholder: https://github.com/<org>/<repo>/issues/<id> or https://github.com/<org>/roadmap/issues/<id>
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of Done
+      description: Tests, docs, flags, rollout checks.
+      placeholder: |
+        - Unit/integration tests updated
+        - Docs updated
+        - Feature flag added/removed
+    validations:
+      required: true
+

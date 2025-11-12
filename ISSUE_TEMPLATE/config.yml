@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/<org>/<roadmap-repo>#workflow
+    about: Our planning model and Definition of Ready
+
