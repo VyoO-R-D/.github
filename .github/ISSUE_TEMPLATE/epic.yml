@@ -1,65 +1,26 @@
 name: Epic
-description: High-level, cross-repo outcome that groups multiple features.
-title: "[EPIC] <concise outcome>"
-labels: ["type:epic", "status:todo", "priority:P1"]
+description: High-level outcome that groups multiple features
+type: epic
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Use this for big goals that span multiple features or repos.
-        Link the 1-pager if it exists.
-  - type: textarea
-    id: context
-    attributes:
-      label: Context
-      description: Why this matters now; background, customer/problem framing.
-      placeholder: Brief narrative / problem statement
-    validations:
-      required: true
   - type: textarea
     id: outcome
     attributes:
-      label: Outcome / Success Criteria
-      description: What will be true when this Epic is done? (measurable)
-      placeholder: e.g., "Signup conversion +10%, auth time < 200ms p95"
+      label: Outcome
+      description: What success looks like
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
       label: Scope
-      description: What is included.
-      placeholder: Bulleted list of feature-level chunks
+      description: What's included
     validations:
       required: true
   - type: textarea
-    id: non_goals
-    attributes:
-      label: Non-goals
-      description: Explicitly out of scope.
-      placeholder: Bulleted list
-  - type: input
-    id: one_pager
-    attributes:
-      label: 1-pager (optional)
-      description: Link to the narrative/spec if available.
-      placeholder: https://github.com/<org>/requirements/blob/main/...
-  - type: checkboxes
-    id: readiness
-    attributes:
-      label: Definition of Ready (Epic)
-      options:
-        - label: Outcome is measurable
-          required: true
-        - label: Success criteria agreed
-          required: true
-        - label: Dependencies identified
-          required: true
-  - type: textarea
     id: features
     attributes:
-      label: Tracked Features
-      description: Link child Features or repo issues; checkboxes give roll-up progress.
+      label: Features
+      description: Child features/issues
       placeholder: |
-        - [ ] Feature: OAuth2 Login (org/roadmap#123)
-        - [ ] Feature: Token Verification (org/roadmap#124)
+        - [ ] #123
+        - [ ] #124

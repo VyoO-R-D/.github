@@ -1,58 +1,31 @@
-
 name: User Story
-description: Work that fits in a sprint and lives in the implementing repo.
-title: "[US] <as a … I want … so that …>"
-labels: ["type:user-story", "status:todo"]
+description: Sprint-sized work
+type: user-story
 body:
+  - type: input
+    id: parent_feature
+    attributes:
+      label: Parent Feature
+      description: "Type # to search and select a feature"
+      placeholder: "#456"
   - type: textarea
     id: story
     attributes:
       label: Story
-      description: As a <role>, I want <capability>, so that <benefit>.
-      placeholder: As a user, I want to sign in with Apple so that I can avoid passwords.
+      description: As a [role], I want [capability], so that [benefit]
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptance Criteria
-      description: Testable conditions for this story.
       placeholder: |
-        - Given/When/Then …
-        - …
+        - Criterion 1
+        - Criterion 2
     validations:
       required: true
   - type: dropdown
     id: points
     attributes:
-      label: Points (Fibonacci)
-      description: Estimate using Fibonacci for planning.
+      label: Points
       options: ["1","2","3","5","8","13"]
-    validations:
-      required: true
-  - type: dropdown
-    id: product
-    attributes:
-      label: Product / Area
-      options: [iOS, Backend, Web, Platform, Reconstruction]
-  - type: input
-    id: parent_feature
-    attributes:
-      label: Parent Feature (link)
-      placeholder: https://github.com/<org>/roadmap/issues/<id>
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes / Dependencies
-      description: Blocking issues, external dependencies, rollout flags.
-  - type: checkboxes
-    id: ready
-    attributes:
-      label: Definition of Ready (Story)
-      options:
-        - label: ACs are clear
-          required: true
-        - label: Dependencies identified
-          required: true
-        - label: Test approach noted
-          required: false

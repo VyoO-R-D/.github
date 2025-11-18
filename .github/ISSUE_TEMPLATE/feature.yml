@@ -1,76 +1,35 @@
 name: Feature
-description: Cross-repo deliverable that can ship independently; links to Stories/Tasks.
-title: "[FEATURE] <concise capability>"
-labels: ["type:feature", "status:todo", "priority:P1"]
+description: Shippable capability
+type: feature
 body:
-  - type: dropdown
-    id: product
+  - type: input
+    id: parent_epic
     attributes:
-      label: Product / Area
-      description: Which product or domain does this impact?
-      options:
-        - iOS
-        - Backend
-        - Web
-        - API
-        - DevOps
-        - Data
-        - Infrastructure
-        - Security
-        - Mobile SDKs
-        - Internal Tools
-        - Other
-    validations:
-      required: true
-  - type: dropdown
-    id: tshirt
-    attributes:
-      label: Feature Size (T-shirt)
-      description: Relative complexity/coordination level.
-      options: [XS, S, M, L, XL]
-    validations:
-      required: true
+      label: Parent Epic
+      description: "Type # to search and select an epic"
+      placeholder: "#123"
   - type: textarea
-    id: outcome
+    id: description
     attributes:
-      label: Outcome
-      description: What value this ships; user and business impact.
-      placeholder: Clear, testable outcome
+      label: Description
+      description: What this feature does
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptance Criteria
-      description: Conditions that must be true to call this Feature done.
       placeholder: |
-        - API supports X with 2xx on success
-        - UI flows cover A/B
+        - Criterion 1
+        - Criterion 2
     validations:
       required: true
-  - type: input
-    id: parent_epic
-    attributes:
-      label: Parent Epic
-      description: Link to Epic
-      placeholder: https://github.com/<org>/roadmap/issues/<id>
   - type: textarea
-    id: links
+    id: tasks
     attributes:
-      label: Linked User Stories / Tasks
-      description: Add repo issues and PRs; use checkboxes to drive progress.
+      label: Child Stories/Tasks
+      description: Track progress with checkboxes
       placeholder: |
-        - [ ] org/ios#123
-        - [ ] org/backend#456
-  - type: checkboxes
-    id: ready
-    attributes:
-      label: Definition of Ready (Feature)
-      options:
-        - label: Outcome + ACs defined
-          required: true
-        - label: Dependencies linked
-          required: true
-        - label: Risk assessed (label risk:low/medium/high if needed)
-          required: false
+        - [ ] #123
+        - [ ] #124
 
