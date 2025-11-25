@@ -1,11 +1,11 @@
 name: User Story
-description: Sprint-sized work
+description: Sprint-sized work item that delivers value
 type: user-story
 body:
   - type: input
     id: parent_feature
     attributes:
-      label: Parent Feature
+      label: Parent Feature/Experiment
       description: "Type # to search and select a feature"
       placeholder: "#456"
   - type: textarea
@@ -13,6 +13,7 @@ body:
     attributes:
       label: Story
       description: As a [role], I want [capability], so that [benefit]
+      placeholder: e.g. As a user, I want to sign in with Apple so that I can avoid passwords.
     validations:
       required: true
   - type: textarea
@@ -29,3 +30,12 @@ body:
     attributes:
       label: Points
       options: ["1","2","3","5","8","13"]
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Definition of Ready 
+      options:
+        - label: Story description clearly defined
+          required: true
+        - label: Acceptance criteria defined
+          required: true

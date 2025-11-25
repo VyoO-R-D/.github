@@ -2,12 +2,26 @@ name: Bug
 description: Something not working as expected
 type: bug
 body:
-  - type: input
-    id: parent_feature
+  - type: dropdown
+    id: product
     attributes:
-      label: Related Feature
-      description: "Type # to link to a feature (optional)"
-      placeholder: "#456"
+      label: Product / Area
+      description: Which product or domain does this impact?
+      options:
+        - iOS App
+        - Backend
+        - DevOps/Infra
+        - Admin Tools
+        - Data
+        - AI/ML
+        - Web (eg:Vyoo website)
+        - Security & Privacy
+        - SDKs & APIs
+        - Developer Experience
+        - QA/Testing
+        - Other
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
@@ -15,6 +29,21 @@ body:
       description: What's wrong?
     validations:
       required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How bad is the impact?
+      options:
+        - Critical (system down)
+        - High (major functionality broken)
+        - Medium (partial degradation)
+        - Low (cosmetic or minor)
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "dev / staging / prod / multi-region"
   - type: textarea
     id: steps
     attributes:
@@ -26,9 +55,26 @@ body:
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: logs
+    attributes:
+      label: Logs / Screenshots
+      description: Paste logs or drag screenshots here.
+  - type: textarea
+    id: expected_behavior
     attributes:
       label: Expected behavior
     validations:
       required: true
+    attributes:
+      label: Definition of Done (Bug Fix)
+      options:
+        - label: Repro steps documented
+          required: true
+        - label: Root cause identified
+          required: true
+        - label: Fix verified in staging
+          required: true
+        - label: Regression tests added
+          required: false
+
 

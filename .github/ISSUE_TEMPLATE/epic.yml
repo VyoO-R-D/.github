@@ -2,11 +2,19 @@ name: Epic
 description: High-level outcome that groups multiple features
 type: epic
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Epics are high-level outcomes that group multiple features together.
+        They help organize work around larger goals.
   - type: textarea
     id: outcome
     attributes:
-      label: Outcome
+      label: Acceptance Criteria
       description: What success looks like
+      placeholder: |
+        - e.g. Users can sign up and log in
+        - e.g. Data is synced across devices
     validations:
       required: true
   - type: textarea
@@ -16,6 +24,12 @@ body:
       description: What's included
     validations:
       required: true
+  - type: input
+    id: one_pager
+    attributes:
+      label: 1-pager(s) if available
+      description: Link to the narrative/spec if available.
+      placeholder: https://github.com/VyoO-R-D/requirements/blob/main/...
   - type: textarea
     id: features
     attributes:
@@ -23,4 +37,4 @@ body:
       description: Child features/issues
       placeholder: |
         - [ ] #123
-        - [ ] #124
+        - [ ] #42

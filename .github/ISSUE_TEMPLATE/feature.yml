@@ -2,6 +2,26 @@ name: Feature
 description: Shippable capability
 type: feature
 body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product / Area
+      description: Which product or domain does this impact?
+      options:
+        - iOS App
+        - Backend
+        - DevOps/Infra
+        - Admin Tools
+        - Data
+        - AI/ML
+        - Web (eg:Vyoo website)
+        - Security & Privacy
+        - SDKs & APIs
+        - Developer Experience
+        - QA/Testing
+        - Other
+    validations:
+      required: true
   - type: input
     id: parent_epic
     attributes:
@@ -16,7 +36,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: acceptance
+    id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
       placeholder: |
@@ -24,12 +44,29 @@ body:
         - Criterion 2
     validations:
       required: true
+  - type: dropdown
+    id: tshirt
+    attributes:
+      label: Feature Size (T-shirt)
+      description: Relative complexity/coordination level.
+      options: [XS, S, M, L, XL]
+    validations:
   - type: textarea
     id: tasks
     attributes:
-      label: Child Stories/Tasks
-      description: Track progress with checkboxes
+      label: Child Stories
+      description: Link to child stories 
       placeholder: |
         - [ ] #123
-        - [ ] #124
-
+        - [ ] #42
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Definition of Ready (Feature)
+      options:
+        - label: Outcome defined
+          required: true
+        - label: Acceptance criteria defined
+          required: true
+        - label: Dependencies linked
+          required: true
