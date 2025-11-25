@@ -1,0 +1,34 @@
+name: Hotfix
+description: Something not working as expected
+type: hotfix
+body:
+  - type: input
+    id: parent_feature
+    attributes:
+      label: Related Feature
+      description: "Type # to link to a feature (optional)"
+      placeholder: "#456"
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+

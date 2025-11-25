@@ -1,44 +1,32 @@
 name: Bug
-description: Report something that isn’t working as expected.
-title: "[BUG] <short summary>"
-labels: ["type:bug", "status:todo", "priority:P2"]
+description: Something not working as expected
+type: bug
 body:
-  - type: markdown
+  - type: dropdown
+    id: product
     attributes:
-      value: |
-        Please include clear steps, expected vs. actual behavior, and environment details.
-        Attach logs or screenshots where possible.
-  - type: textarea
-    id: summary
-    attributes:
-      label: Summary
-      description: Brief description of the issue.
-      placeholder: e.g., "Measurements pod crashes on startup when using config v3."
+      label: Product / Area
+      description: Which product or domain does this impact?
+      options:
+        - iOS App
+        - Backend
+        - DevOps/Infra
+        - Admin Tools
+        - Data
+        - AI/ML
+        - Web (eg:Vyoo website)
+        - Security & Privacy
+        - SDKs & APIs
+        - Developer Experience
+        - QA/Testing
+        - Other
     validations:
       required: true
   - type: textarea
-    id: steps
+    id: description
     attributes:
-      label: Steps to reproduce
-      description: List each step to make the issue happen.
-      placeholder: |
-        1. Deploy measurement pod
-        2. Run container with --enable-new-metrics
-        3. Observe crash
-    validations:
-      required: true
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      placeholder: e.g., "Pod starts successfully and publishes metrics to ACR."
-    validations:
-      required: true
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-      placeholder: e.g., "Pod fails to start; logs show segmentation fault."
+      label: Description
+      description: What's wrong?
     validations:
       required: true
   - type: dropdown
@@ -51,41 +39,34 @@ body:
         - High (major functionality broken)
         - Medium (partial degradation)
         - Low (cosmetic or minor)
-    validations:
-      required: true
-  - type: dropdown
-    id: product
-    attributes:
-      label: Product / Area
-      options:
-        - iOS
-        - Android
-        - Web
-        - Backend
-        - API
-        - Data
-        - Infrastructure
-        - Security
-        - DevOps
-        - Mobile SDKs
-        - Internal Tools
-        - Other
-    validations:
-      required: true
   - type: input
     id: environment
     attributes:
       label: Environment
-      placeholder: "dev / staging / prod"
+      placeholder: "dev / staging / prod / multi-region"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. See error
+    validations:
+      required: true
   - type: textarea
     id: logs
     attributes:
       label: Logs / Screenshots
       description: Paste logs or drag screenshots here.
-  - type: checkboxes
-    id: checklist
+  - type: textarea
+    id: expected_behavior
     attributes:
-      label: Definition of Done (Bug)
+      label: Expected behavior
+    validations:
+      required: true
+    attributes:
+      label: Definition of Done (Bug Fix)
       options:
         - label: Repro steps documented
           required: true
@@ -95,4 +76,5 @@ body:
           required: true
         - label: Regression tests added
           required: false
+
 
