@@ -22,12 +22,6 @@ body:
         - Other
     validations:
       required: true
-  - type: input
-    id: parent_epic
-    attributes:
-      label: Parent Epic
-      description: "Type # to search and select an epic"
-      placeholder: "#123"
   - type: textarea
     id: description
     attributes:
@@ -51,14 +45,6 @@ body:
       description: Relative complexity/coordination level.
       options: [XS, S, M, L, XL]
     validations:
-  - type: textarea
-    id: tasks
-    attributes:
-      label: Child Stories
-      description: Link to child stories 
-      placeholder: |
-        - [ ] #123
-        - [ ] #42
   - type: checkboxes
     id: ready
     attributes:

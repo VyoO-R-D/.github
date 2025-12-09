@@ -1,13 +1,7 @@
 name: Hotfix
-description: Something not working as expected
+description: Critical production issue requiring immediate fix
 type: hotfix
 body:
-  - type: input
-    id: parent_feature
-    attributes:
-      label: Related Feature
-      description: "Type # to link to a feature (optional)"
-      placeholder: "#456"
   - type: textarea
     id: description
     attributes:

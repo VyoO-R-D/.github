@@ -65,6 +65,8 @@ body:
       label: Expected behavior
     validations:
       required: true
+  - type: checkboxes
+    id: definition_of_done
     attributes:
       label: Definition of Done (Bug Fix)
       options:

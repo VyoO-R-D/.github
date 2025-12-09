@@ -30,11 +30,3 @@ body:
       label: 1-pager(s) if available
       description: Link to the narrative/spec if available.
       placeholder: https://github.com/VyoO-R-D/requirements/blob/main/...
-  - type: textarea
-    id: features
-    attributes:
-      label: Features
-      description: Child features/issues
-      placeholder: |
-        - [ ] #123
-        - [ ] #42

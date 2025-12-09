@@ -2,12 +2,6 @@ name: User Story
 description: Sprint-sized work item that delivers value
 type: user-story
 body:
-  - type: input
-    id: parent_feature
-    attributes:
-      label: Parent Feature/Experiment
-      description: "Type # to search and select a feature"
-      placeholder: "#456"
   - type: textarea
     id: story
     attributes:

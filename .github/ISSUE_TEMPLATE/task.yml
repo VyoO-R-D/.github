@@ -2,12 +2,6 @@ name: Task
 description: Small unit of work
 type: task
 body:
-  - type: input
-    id: parent
-    attributes:
-      label: Parent Feature/Story
-      description: "Type # to link to parent (optional)"
-      placeholder: "#456"
   - type: textarea
     id: description
     attributes:
@@ -15,6 +9,5 @@ body:
       description: What needs to be done
     validations:
       required: true
-  - type: dropdown
 
 

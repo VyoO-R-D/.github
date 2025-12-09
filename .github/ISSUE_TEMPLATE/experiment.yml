@@ -2,12 +2,6 @@ name: Experiment
 description: Test and validate hypotheses
 type: experiment
 body:
-  - type: input
-    id: parent_feature
-    attributes:
-      label: Parent Feature/Epic
-      description: "Type # to search and select a feature or epic"
-      placeholder: "#123"
   - type: textarea
     id: hypothesis
     attributes:
@@ -33,12 +27,4 @@ body:
         - Metric 2: [target]
     validations:
       required: true
-  - type: textarea
-    id: tasks
-    attributes:
-      label: Implementation Tasks
-      description: Track progress with checkboxes
-      placeholder: |
-        - [ ] #123
-        - [ ] #124
 
